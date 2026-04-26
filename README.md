@@ -1,5 +1,20 @@
 # Dev Onboarding — Universal Setup System
 
+## What this is
+
+Every time a new developer joins a project, they spend hours figuring out what to install, what commands to run, and how the project is structured. README files are often outdated. Setup docs are missing. It's a waste of time every single time.
+
+This system solves that. Drop 4 files into any repo and the entire onboarding is automated — tool installation, dependency setup, and a generated doc that explains the project to the new dev. It works for any stack: Node, Python, Go, or a mix.
+
+**What it does:**
+- `bootstrap.py` detects what tools are missing on the developer's machine and installs them automatically (works on Mac, Linux, Windows)
+- `justfile` gives every repo the same standard commands — `just setup`, `just dev`, `just test` — so developers don't need to learn a new set of commands per project
+- `generate-onboarding.py` reads the repo (README, package.json, pyproject.toml, folder structure, git history) and auto-generates an `ONBOARDING.md` — a living doc that tells the new dev exactly what the project is, how it's structured, and what commands to use. No manual writing. Always up to date.
+
+**The result:** a new developer clones the repo, runs one command, and is ready to write code in minutes — not hours.
+
+---
+
 Drop these 4 files into any repo. A new dev runs one command and is ready.
 
 ```
