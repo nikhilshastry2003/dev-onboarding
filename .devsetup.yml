@@ -1,0 +1,21 @@
+# .devsetup.yml — Dev onboarding configuration
+# Drop this in any repo root. Run: python bootstrap.py
+
+name: my-project
+
+# ─── Required tools (bootstrap ABORTS if missing) ────────────────────────────
+required:
+  - git
+  - node          # version hint shown in error if missing
+
+# ─── Auto-install tools (bootstrap installs if missing) ──────────────────────
+install:
+  - just          # task runner (replaces make/npm scripts)
+  - pnpm          # Node package manager  ← remove if not a Node project
+  - uv            # Python package manager ← remove if not a Python project
+
+# ─── What to do after bootstrap succeeds ─────────────────────────────────────
+next_steps:
+  - run: "just setup"
+  - read: "ONBOARDING.md"
+  - run: "just dev"
